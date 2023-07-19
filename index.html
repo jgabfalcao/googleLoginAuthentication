@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Login</title>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+
+    <script>
+      function handleCredentialResponse(response) {
+        const data = jwt_decode(response.credential);
+        console.log(data);
+      }
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id:
+            "147674603370-c10hkkav6duhgobc63p1jicjivtlhq0a.apps.googleusercontent.com",
+          callback: handleCredentialResponse,
+        });
+
+        google.accounts.id.renderButton(
+          document.getElementById("buttonDiv"),
+          {
+            theme: "filled_black",
+            size: "large",
+            type: "standard",
+            shape: "pill",
+            text: "continue_with",
+            locale: "pt-BR",
+            logo_alignment: "left",
+            width: "300",
+          } // customization attributes
+        );
+        google.accounts.id.prompt(); // also display the One Tap dialog
+      };
+    </script>
+  </head>
+  <body>
+    <div id="buttonDiv"></div>
+  </body>
+</html>
