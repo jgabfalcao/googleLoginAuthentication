@@ -6,6 +6,13 @@
     <title>Google Login</title>
     <script src="https://accounts.google.com/gsi/client" async></script>
     <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
 
     <script>
       function handleCredentialResponse(response) {
@@ -33,6 +40,12 @@
     </script>
   </head>
   <body>
-    <div id="buttonDiv"></div>
+    <div class="mainContentContainer">
+      <div class="logoContainer">
+        <img class="logoImg" src="assets/core.png" alt="" />
+      </div>
+
+      <div class="googleButton" id="buttonDiv"></div>
+    </div>
   </body>
 </html>
