@@ -14,30 +14,7 @@
       rel="stylesheet"
     />
 
-    <script>
-      function handleCredentialResponse(response) {
-        const data = jwt_decode(response.credential);
-        console.log(data);
-      }
-      window.onload = function () {
-        google.accounts.id.initialize({
-          client_id:
-            "147674603370-c10hkkav6duhgobc63p1jicjivtlhq0a.apps.googleusercontent.com",
-          callback: handleCredentialResponse,
-        });
-
-        google.accounts.id.renderButton(
-          document.getElementById("buttonDiv"),
-          {
-            theme: "filled_black",
-            size: "large",
-            shape: "pill",
-            locale: "pt-BR",
-          } // customization attributes
-        );
-        google.accounts.id.prompt(); // also display the One Tap dialog
-      };
-    </script>
+    <script src="script.js"></script>
   </head>
   <body>
     <div class="mainContentContainer">
