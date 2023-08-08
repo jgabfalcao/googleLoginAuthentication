@@ -29,3 +29,22 @@ body {
 .logoImg {
   width: 80%;
 }
+
+button {
+  color: black;
+  background-color: #d9bb56;
+  border-radius: 20px;
+  width: 140px;
+  height: 70px;
+  border: 1px solid black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: rgba(217, 187, 86, 0.9);
+}
+
+.mysteryBox {
+  width: 30px;
+}
